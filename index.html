@@ -117,8 +117,8 @@
   </h1>
   <p class="hero-sub">Your crew submits hours from their phone. <strong>You see it instantly.</strong> No spreadsheets, no WhatsApp messages, no Friday afternoon panic.</p>
   <div class="waitlist-form" id="waitlist">
-    <input type="email" id="heroEmail" placeholder="your@email.com" />
-    <button class="btn-waitlist" id="heroBtn" onclick="joinWaitlist('heroEmail', 'heroSuccess', 'heroError', 'heroBtn')">Get Early Access →</button>
+    <input type="email" id="heroEmail" hidden placeholder="your@email.com" />
+    <button class="btn-waitlist" id="heroBtn" onclick="window.location.href='https://app.knockoff.co.nz/owner.html'">Start your free trial →</button>
   </div>
   <div class="success-msg" id="heroSuccess">🎉 You're on the list! We'll be in touch soon.</div>
   <div class="error-msg" id="heroError">Something went wrong. Please try again or email hello@knockoff.co.nz</div>
@@ -188,11 +188,11 @@
 </div>
 <section class="cta-section" id="signup">
   <div class="bg-text" style="bottom: -5%; right: -5%;">EARLY</div>
-  <h2 class="cta-heading reveal">Get in <span>early.</span></h2>
-  <p class="cta-sub reveal">Join today. Be first when we launch.</p>
+  <h2 class="cta-heading reveal">Start your <span>free trial.</span></h2>
+  <p class="cta-sub reveal">7 days free. No credit card. Cancel anytime.</p>
   <div class="cta-form reveal">
-    <input type="email" id="ctaEmail" placeholder="your@email.com" style="background:rgba(255,255,255,0.06); border:1px solid #2a2a2a; border-radius:8px; color:#f5f0e8; font-family:'Instrument Sans',sans-serif; font-size:1rem; padding:0.85rem 1.25rem; width:300px; outline:none;" onkeydown="if(event.key==='Enter')joinWaitlist('ctaEmail','ctaSuccess','ctaError','ctaBtn')" />
-    <button class="btn-waitlist" id="ctaBtn" onclick="joinWaitlist('ctaEmail', 'ctaSuccess', 'ctaError', 'ctaBtn')">Join the Waitlist →</button>
+    <input type="email" id="ctaEmail" hidden placeholder="your@email.com" style="background:rgba(255,255,255,0.06); border:1px solid #2a2a2a; border-radius:8px; color:#f5f0e8; font-family:'Instrument Sans',sans-serif; font-size:1rem; padding:0.85rem 1.25rem; width:300px; outline:none;" onkeydown="if(event.key==='Enter')joinWaitlist('ctaEmail','ctaSuccess','ctaError','ctaBtn')" />
+    <button class="btn-waitlist" id="ctaBtn" onclick="window.location.href='https://app.knockoff.co.nz/owner.html'">Start your free trial →</button>
   </div>
   <div class="success-msg" id="ctaSuccess" style="max-width:400px; margin:1rem auto 0;">🎉 You're on the list! We'll be in touch soon.</div>
   <div class="error-msg" id="ctaError" style="max-width:400px; margin:1rem auto 0;">Something went wrong. Please try again or email hello@knockoff.co.nz</div>
