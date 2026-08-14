@@ -103,6 +103,8 @@
   <p>When an owner signs up, we collect their <strong>email address</strong> (used for passwordless "magic link" sign-in) and basic business details they choose to enter, such as business name and payroll setup preferences.</p>
   <h3>Crew and timesheet information</h3>
   <p>Owners add crew members and enter information such as each person's <strong>name and a login PIN</strong>. Crew then record timesheet data including <strong>start and finish times, breaks, job sites and hours worked</strong>.</p>
+  <h3>Location information</h3>
+  <p>When a crew member clocks in or out, the app asks their device for its <strong>location and records the GPS coordinates and an approximate street address</strong> for that clock-in and clock-out, stored alongside the timesheet. This helps confirm work was recorded at the job site. If location isn't available or is declined on the device, the entry is still recorded and simply notes that the location was unavailable. Coordinates are converted to an address using the OpenStreetMap service (see section 6).</p>
   <h3>Payment information</h3>
   <p>When you subscribe to a paid plan, payment is processed by <strong>Stripe</strong>. Stripe collects and holds your card details — <strong>we do not see or store full card numbers</strong>. We receive limited billing information from Stripe such as your subscription status, the last four digits of your card, and invoice records.</p>
   <h3>Technical and usage information</h3>
@@ -132,6 +134,7 @@
     <li><strong>Supabase</strong> — our database and application infrastructure provider, which stores your account, crew and timesheet data.</li>
     <li><strong>Stripe</strong> — our payment processor, which handles subscriptions, cards and invoicing.</li>
     <li><strong>Email delivery providers</strong> — used to send sign-in links and service emails.</li>
+    <li><strong>OpenStreetMap (Nominatim)</strong> — used to turn clock-in/out GPS coordinates into a readable street address.</li>
   </ul>
   <p>These providers are only permitted to use your information to provide their services to us. We may also disclose information where required by law, or to protect our legal rights or the safety of others.</p>
 
