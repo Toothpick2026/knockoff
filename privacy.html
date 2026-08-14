@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Knockoff</title>
+<meta name="description" content="How Knockoff (Corpworks Limited) collects, uses, stores and protects personal information under the New Zealand Privacy Act 2020.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0d0d0d;
+    --white: #f5f0e8;
+    --yellow: #FFD000;
+    --orange: #FF5C00;
+    --mid: #1a1a1a;
+    --muted: #888;
+    --border: #2a2a2a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Instrument Sans', sans-serif; overflow-x: hidden; line-height: 1.65; }
+  a { color: inherit; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2.5rem; background: rgba(13,13,13,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--yellow); line-height: 1; text-decoration: none; }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--white); text-decoration: none; opacity: 0.8; transition: opacity 0.2s, color 0.2s; }
+  .nav-links a:hover { opacity: 1; color: var(--yellow); }
+  .nav-cta { background: var(--yellow); color: var(--black); border: none; border-radius: 6px; font-family: 'Instrument Sans', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.55rem 1.25rem; cursor: pointer; text-decoration: none; transition: background 0.2s; letter-spacing: 0.5px; white-space: nowrap; }
+  .nav-cta:hover { background: #ffe033; }
+
+  .doc-hero { padding: 9rem 2rem 2.5rem; max-width: 820px; margin: 0 auto; }
+  .doc-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--orange); margin-bottom: 1rem; }
+  .doc-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 8vw, 5rem); letter-spacing: 2px; line-height: 0.95; }
+  .doc-meta { color: var(--muted); font-size: 0.9rem; margin-top: 1rem; }
+
+  .doc { max-width: 820px; margin: 0 auto; padding: 1rem 2rem 2rem; }
+  .doc .intro { color: #cfcabf; font-size: 1.05rem; margin-bottom: 1.25rem; }
+  .doc h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: 1px; margin: 2.75rem 0 0.9rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; gap: 0.75rem; align-items: baseline; }
+  .doc h2 .n { color: var(--yellow); font-size: 1.4rem; min-width: 2rem; }
+  .doc h3 { font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--white); }
+  .doc p { color: #cfcabf; margin-bottom: 1rem; }
+  .doc p strong { color: var(--white); }
+  .doc ul { margin: 0.4rem 0 1rem 1.4rem; color: #cfcabf; }
+  .doc li { margin-bottom: 0.55rem; }
+  .doc a.link { color: var(--yellow); text-decoration: underline; }
+  .doc .callout { background: var(--mid); border: 1px solid var(--border); border-left: 3px solid var(--yellow); border-radius: 8px; padding: 1.1rem 1.35rem; margin: 1.5rem 0; font-size: 0.95rem; color: #e6e0d4; }
+
+  footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem 2rem; margin-top: 4rem; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; }
+  .footer-brand { max-width: 260px; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 2px; color: var(--yellow); }
+  .footer-brand p { font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; }
+  .footer-col h4 { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 0.85rem; }
+  .footer-col a { display: block; font-size: 0.9rem; color: #bbb; text-decoration: none; margin-bottom: 0.55rem; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--yellow); }
+  .footer-bottom { max-width: 1100px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; }
+  .footer-bottom a { color: var(--muted); text-decoration: underline; }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .doc, .doc-hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+    footer { padding: 2.5rem 1.25rem 2rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Knock<span>off</span></a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/guide.html">Guide</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/#pricing">Pricing</a>
+  </div>
+  <a href="https://app.knockoff.co.nz/owner.html" class="nav-cta">Start your free trial</a>
+</nav>
+
+<header class="doc-hero">
+  <div class="doc-tag">Legal</div>
+  <h1 class="doc-title">Privacy Policy</h1>
+  <div class="doc-meta">Last updated: 13 August 2026 · Effective: 13 August 2026</div>
+</header>
+
+<main class="doc">
+  <p class="intro">This Privacy Policy explains how <strong>Corpworks Limited</strong> ("Knockoff", "we", "us", "our") collects, uses, stores, discloses and protects personal information when you use the Knockoff app and website. We handle personal information in accordance with the <strong>New Zealand Privacy Act 2020</strong> and its Information Privacy Principles (IPPs).</p>
+
+  <h2><span class="n">1</span> Who we are</h2>
+  <p>Knockoff is a timesheet and payroll-preparation service for New Zealand businesses, operated by Corpworks Limited, a company incorporated in New Zealand (GST number 121905558). If you have any questions about this policy or your personal information, contact us at <a class="link" href="mailto:hello@knockoff.co.nz">hello@knockoff.co.nz</a>.</p>
+
+  <h2><span class="n">2</span> Who this policy covers</h2>
+  <p>This policy applies to two main groups:</p>
+  <ul>
+    <li><strong>Account owners</strong> — the business owner or manager who signs up for and pays for Knockoff.</li>
+    <li><strong>Crew members</strong> — staff whose details are added to Knockoff by an account owner so they can record their hours.</li>
+  </ul>
+  <p>If you're a crew member, the business you work for is the one that decides what information goes into Knockoff about you. We process that information on their behalf as well as being responsible for it under the Privacy Act. If you have questions about your data, you can contact either your employer or us.</p>
+
+  <h2><span class="n">3</span> Information we collect</h2>
+  <h3>Account and contact information</h3>
+  <p>When an owner signs up, we collect their <strong>email address</strong> (used for passwordless "magic link" sign-in) and basic business details they choose to enter, such as business name and payroll setup preferences.</p>
+  <h3>Crew and timesheet information</h3>
+  <p>Owners add crew members and enter information such as each person's <strong>name and a login PIN</strong>. Crew then record timesheet data including <strong>start and finish times, breaks, job sites and hours worked</strong>.</p>
+  <h3>Payment information</h3>
+  <p>When you subscribe to a paid plan, payment is processed by <strong>Stripe</strong>. Stripe collects and holds your card details — <strong>we do not see or store full card numbers</strong>. We receive limited billing information from Stripe such as your subscription status, the last four digits of your card, and invoice records.</p>
+  <h3>Technical and usage information</h3>
+  <p>Like most online services, we may automatically collect technical information such as device type, browser, IP address and log data, to keep the service secure and working properly.</p>
+
+  <h2><span class="n">4</span> How we collect information</h2>
+  <p>We collect most information <strong>directly</strong> — from owners when they sign up and use the app, and from crew when they submit timesheets.</p>
+  <div class="callout">
+    <strong>Information collected about crew from their employer.</strong> Where an owner adds a crew member's details, we are collecting personal information about that crew member <strong>indirectly</strong> (from someone other than the individual). In line with IPP 3A of the Privacy Act 2020 (in force from 1 May 2026), this policy is one of the ways we make that collection transparent. We rely on the account owner to have the authority to provide their crew's information and to make their crew aware of how it is used.
+  </div>
+
+  <h2><span class="n">5</span> How we use your information</h2>
+  <p>We use personal information to:</p>
+  <ul>
+    <li>Provide the Knockoff service — recording hours, calculating paid time, approvals and payroll exports;</li>
+    <li>Authenticate owners (magic-link sign-in) and crew (name + PIN);</li>
+    <li>Process subscriptions, billing and GST invoicing through Stripe;</li>
+    <li>Provide customer support and respond to your enquiries;</li>
+    <li>Keep the service secure, prevent misuse, and meet our legal obligations;</li>
+    <li>Improve and maintain the app.</li>
+  </ul>
+  <p>We do <strong>not</strong> sell your personal information, and we do not use it for third-party advertising.</p>
+
+  <h2><span class="n">6</span> Who we share information with</h2>
+  <p>We share personal information only with service providers who help us run Knockoff, and only as needed:</p>
+  <ul>
+    <li><strong>Supabase</strong> — our database and application infrastructure provider, which stores your account, crew and timesheet data.</li>
+    <li><strong>Stripe</strong> — our payment processor, which handles subscriptions, cards and invoicing.</li>
+    <li><strong>Email delivery providers</strong> — used to send sign-in links and service emails.</li>
+  </ul>
+  <p>These providers are only permitted to use your information to provide their services to us. We may also disclose information where required by law, or to protect our legal rights or the safety of others.</p>
+
+  <h2><span class="n">7</span> Overseas storage and disclosure</h2>
+  <p>Some of our service providers (including Stripe and Supabase) may store or process information on servers located <strong>outside New Zealand</strong>. Where we disclose personal information overseas, we take reasonable steps to ensure it is protected by comparable safeguards to those under the New Zealand Privacy Act, consistent with IPP 12. By using Knockoff, you acknowledge that your information may be stored and processed overseas by these providers.</p>
+
+  <h2><span class="n">8</span> Storage and security</h2>
+  <p>We take reasonable technical and organisational steps to protect personal information against loss, misuse and unauthorised access, including access controls and encrypted connections. No online service can be guaranteed to be completely secure, but we work to keep your data safe and to respond quickly if a problem arises.</p>
+
+  <h2><span class="n">9</span> How long we keep information</h2>
+  <p>We keep personal information for as long as your account is active and for a reasonable period afterwards, so we can meet legal, tax and record-keeping obligations. When information is no longer needed, we take reasonable steps to delete or de-identify it. Owners can request deletion of their account data by contacting us.</p>
+
+  <h2><span class="n">10</span> Your rights — access and correction</h2>
+  <p>Under the Privacy Act 2020 you have the right to <strong>ask for a copy of the personal information</strong> we hold about you, and to <strong>ask us to correct it</strong> if it's wrong. Owners can view and update much of their information directly in the app. For anything else, email <a class="link" href="mailto:hello@knockoff.co.nz">hello@knockoff.co.nz</a> and we'll help. Crew members can also contact their employer, who controls their information within Knockoff.</p>
+
+  <h2><span class="n">11</span> Cookies</h2>
+  <p>We use only the cookies and similar technologies necessary to keep you signed in and to run the service securely. We do not use third-party advertising or tracking cookies.</p>
+
+  <h2><span class="n">12</span> Children</h2>
+  <p>Knockoff is a tool for businesses and their workers. It is not intended for use by children, and we do not knowingly collect information from anyone under the minimum legal working age for the roles it is used for.</p>
+
+  <h2><span class="n">13</span> Changes to this policy</h2>
+  <p>We may update this policy from time to time. When we make material changes, we'll update the "last updated" date above and, where appropriate, let account owners know. Continuing to use Knockoff after a change means you accept the updated policy.</p>
+
+  <h2><span class="n">14</span> Complaints and contact</h2>
+  <p>If you have a concern about how we've handled your personal information, please contact us first at <a class="link" href="mailto:hello@knockoff.co.nz">hello@knockoff.co.nz</a> so we can try to put it right. You also have the right to complain to the <strong>Office of the Privacy Commissioner</strong> (<a class="link" href="https://www.privacy.org.nz">privacy.org.nz</a>).</p>
+
+  <div class="callout" style="border-left-color: var(--orange);">
+    Knockoff is operated by Corpworks Limited, New Zealand. GST number 121905558. Contact: hello@knockoff.co.nz.
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Knockoff</div>
+      <p>The timesheet app built for New Zealand tradies. By Corpworks Limited.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/about.html">About</a>
+      <a href="/guide.html">Guide</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <a href="mailto:hello@knockoff.co.nz">hello@knockoff.co.nz</a>
+      <a href="https://app.knockoff.co.nz/owner.html">Owner login</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>NZ-built · © 2026 Knockoff · A Corpworks Limited product</div>
+    <div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+  </div>
+</footer>
+</body>
+</html>

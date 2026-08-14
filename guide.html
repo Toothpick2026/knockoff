@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owner's Guide — Knockoff | Timesheet app for NZ tradies</title>
+<meta name="description" content="How to run Knockoff: set up your crew and PINs, add job sites, approve hours, export to Smartly payroll, and manage your billing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0d0d0d;
+    --white: #f5f0e8;
+    --yellow: #FFD000;
+    --orange: #FF5C00;
+    --mid: #1a1a1a;
+    --muted: #888;
+    --border: #2a2a2a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Instrument Sans', sans-serif; overflow-x: hidden; line-height: 1.6; }
+  a { color: inherit; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2.5rem; background: rgba(13,13,13,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--yellow); line-height: 1; text-decoration: none; }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--white); text-decoration: none; opacity: 0.8; transition: opacity 0.2s, color 0.2s; }
+  .nav-links a:hover { opacity: 1; color: var(--yellow); }
+  .nav-cta { background: var(--yellow); color: var(--black); border: none; border-radius: 6px; font-family: 'Instrument Sans', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.55rem 1.25rem; cursor: pointer; text-decoration: none; transition: background 0.2s; letter-spacing: 0.5px; white-space: nowrap; }
+  .nav-cta:hover { background: #ffe033; }
+
+  .page-hero { padding: 10rem 2rem 3rem; text-align: center; position: relative; overflow: hidden; }
+  .page-hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,208,0,0.12) 0%, transparent 60%); }
+  .page-tag { display: inline-block; background: rgba(255,208,0,0.12); border: 1px solid rgba(255,208,0,0.3); color: var(--yellow); font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+  .page-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 9vw, 5.5rem); line-height: 0.92; letter-spacing: 3px; position: relative; z-index: 1; }
+  .page-heading span { color: var(--yellow); }
+  .page-sub { font-size: clamp(1.05rem, 2.2vw, 1.25rem); color: #aaa; max-width: 620px; margin: 1.25rem auto 0; position: relative; z-index: 1; }
+
+  .container { max-width: 820px; margin: 0 auto; padding: 2rem; }
+
+  .toc { background: var(--mid); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 1.75rem; margin-bottom: 3rem; }
+  .toc h4 { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 1rem; }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 0.35rem 0; }
+  .toc li a { color: #cfcabf; text-decoration: none; font-size: 0.98rem; display: flex; gap: 0.75rem; align-items: baseline; transition: color 0.2s; }
+  .toc li a:hover { color: var(--yellow); }
+  .toc li a::before { content: counter(toc, decimal-leading-zero); font-family: 'Bebas Neue', sans-serif; color: var(--yellow); font-size: 1.05rem; min-width: 1.6rem; }
+
+  .step { display: flex; gap: 1.5rem; padding: 2.25rem 0; border-bottom: 1px solid var(--border); }
+  .step:last-of-type { border-bottom: none; }
+  .step-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(255,208,0,0.18); line-height: 0.9; flex-shrink: 0; min-width: 3.5rem; }
+  .step-body { flex: 1; }
+  .step-body h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); letter-spacing: 1px; line-height: 1.05; margin-bottom: 0.75rem; }
+  .step-body p { color: #cfcabf; margin-bottom: 0.9rem; }
+  .step-body strong { color: var(--white); }
+  .step-body ul { margin: 0.5rem 0 1rem 1.25rem; color: #cfcabf; }
+  .step-body li { margin-bottom: 0.5rem; }
+  .step-body a { color: var(--yellow); text-decoration: underline; }
+  .tip { background: rgba(255,208,0,0.06); border: 1px solid rgba(255,208,0,0.25); border-radius: 8px; padding: 0.85rem 1.1rem; font-size: 0.92rem; color: #e6e0d4; margin-top: 0.5rem; }
+  .tip strong { color: var(--yellow); }
+
+  .cta-band { background: var(--mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden; margin-top: 4rem; }
+  .cta-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255,208,0,0.08) 0%, transparent 70%); }
+  .cta-band h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 7vw, 4.5rem); letter-spacing: 2px; line-height: 1; position: relative; z-index: 1; }
+  .cta-band h2 span { color: var(--yellow); }
+  .cta-band p { color: #999; margin: 1rem 0 2rem; position: relative; z-index: 1; }
+  .btn-primary { display: inline-block; background: var(--yellow); color: var(--black); border: none; border-radius: 8px; font-family: 'Instrument Sans', sans-serif; font-size: 1rem; font-weight: 700; padding: 0.9rem 2.25rem; cursor: pointer; text-decoration: none; transition: all 0.2s; position: relative; z-index: 1; }
+  .btn-primary:hover { background: #ffe033; transform: translateY(-1px); }
+
+  footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem 2rem; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; }
+  .footer-brand { max-width: 260px; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 2px; color: var(--yellow); }
+  .footer-brand p { font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; }
+  .footer-col h4 { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 0.85rem; }
+  .footer-col a { display: block; font-size: 0.9rem; color: #bbb; text-decoration: none; margin-bottom: 0.55rem; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--yellow); }
+  .footer-bottom { max-width: 1100px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; }
+  .footer-bottom a { color: var(--muted); text-decoration: underline; }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .container { padding: 1.5rem 1.25rem; }
+    .step { gap: 1rem; }
+    .step-num { font-size: 2.5rem; min-width: 2.5rem; }
+    footer { padding: 2.5rem 1.25rem 2rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Knock<span>off</span></a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/guide.html">Guide</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/#pricing">Pricing</a>
+  </div>
+  <a href="https://app.knockoff.co.nz/owner.html" class="nav-cta">Start your free trial</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-tag">📖 Owner's guide</div>
+  <h1 class="page-heading">Up and running<br><span>in ten minutes.</span></h1>
+  <p class="page-sub">Everything you need to set up Knockoff, run your first week of timesheets, and get your crew's hours into payroll. Come back any time — this page isn't going anywhere.</p>
+</section>
+
+<div class="container">
+
+  <div class="toc">
+    <h4>What's in here</h4>
+    <ol>
+      <li><a href="#signin">Sign in &amp; create your business</a></li>
+      <li><a href="#crew">Add your crew &amp; set PINs</a></li>
+      <li><a href="#sites">Add your job sites</a></li>
+      <li><a href="#share">Share the clock-in link with your crew</a></li>
+      <li><a href="#approve">Approve hours each week</a></li>
+      <li><a href="#export">Export to Smartly payroll</a></li>
+      <li><a href="#billing">Manage billing, plans &amp; cancelling</a></li>
+    </ol>
+  </div>
+
+  <div class="step" id="signin">
+    <div class="step-num">01</div>
+    <div class="step-body">
+      <h2>Sign in &amp; create your business</h2>
+      <p>Head to <a href="https://app.knockoff.co.nz/owner.html">app.knockoff.co.nz/owner.html</a> and enter your email. We'll email you a <strong>magic link</strong> — click it and you're in. No password to create or remember.</p>
+      <p>The first time you sign in, Knockoff sets up your business and starts your <strong>7-day free trial</strong> automatically. From there, a quick 5-step setup wizard walks you through the basics below.</p>
+      <div class="tip"><strong>Tip:</strong> The magic-link email can take a minute and occasionally lands in spam. If it hasn't shown up, check your junk folder before requesting another.</div>
+    </div>
+  </div>
+
+  <div class="step" id="crew">
+    <div class="step-num">02</div>
+    <div class="step-body">
+      <h2>Add your crew &amp; set PINs</h2>
+      <p>In the setup wizard (or later from your dashboard), add each crew member by name and give them a <strong>4–6 digit PIN</strong>. That PIN is how they'll log in on their phone — so pick something they'll remember, and keep them all different.</p>
+      <ul>
+        <li>Add everyone who fills out a timesheet — including yourself if you're on the tools.</li>
+        <li>You can add, rename, or remove crew any time as your team changes.</li>
+        <li>Your plan sets how many crew you can have: <strong>Starter up to 5, Pro up to 10, Business up to 20</strong>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="sites">
+    <div class="step-num">03</div>
+    <div class="step-body">
+      <h2>Add your job sites</h2>
+      <p>Add the job sites your crew work across — a name for each is all you need (e.g. "12 Kauri Rd" or "Westfield fit-out"). When your crew submit a timesheet, they pick which site they were on, so you always know who was where.</p>
+      <div class="tip"><strong>Tip:</strong> Keep site names short and recognisable. You can add new sites whenever a job kicks off and archive old ones when they wrap up.</div>
+    </div>
+  </div>
+
+  <div class="step" id="share">
+    <div class="step-num">04</div>
+    <div class="step-body">
+      <h2>Share the clock-in link with your crew</h2>
+      <p>Your crew don't need to download anything. Send them the <strong>crew clock-in link</strong> (Knockoff gives you a shareable link in the wizard and on your dashboard) — they open it on their phone, tap their name, enter their PIN, and they're in.</p>
+      <p>Get them to <strong>bookmark it or add it to their home screen</strong> so it's one tap every morning. WhatsApp or text is the easiest way to send it round the crew.</p>
+    </div>
+  </div>
+
+  <div class="step" id="approve">
+    <div class="step-num">05</div>
+    <div class="step-body">
+      <h2>Approve hours each week</h2>
+      <p>As your crew submit their days, entries land on your <strong>admin board</strong> in real time. Breaks are already deducted, so paid hours are worked out for you. Your job is just to check and approve.</p>
+      <ul>
+        <li>Review entries individually, or approve everything pending in one hit.</li>
+        <li>Spot something off? Edit the entry before you approve it.</li>
+        <li>Nothing goes to payroll until <strong>you've approved it</strong> — you're always in control.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="export">
+    <div class="step-num">06</div>
+    <div class="step-body">
+      <h2>Export to Smartly payroll</h2>
+      <p>Once the week's hours are approved, click <strong>Export</strong>. Knockoff produces a <strong>Smartly-ready CSV</strong> — no reformatting, no re-keying. Import it into your Smartly payroll run and you're done.</p>
+      <div class="tip"><strong>Using a different payroll system?</strong> The export is a standard CSV. Email <a href="mailto:hello@knockoff.co.nz">hello@knockoff.co.nz</a> and we'll help you line it up.</div>
+    </div>
+  </div>
+
+  <div class="step" id="billing">
+    <div class="step-num">07</div>
+    <div class="step-body">
+      <h2>Manage billing, plans &amp; cancelling</h2>
+      <p>When your trial ends, pick the plan that fits your crew size and add your card. Payments are handled securely by <strong>Stripe</strong>. Prices are GST-exclusive and 15% GST is added at checkout.</p>
+      <p>From the <strong>billing portal</strong> in your dashboard you can:</p>
+      <ul>
+        <li>View and download your invoices and GST receipts.</li>
+        <li>Update your card details.</li>
+        <li>Move up or down a plan as your crew changes.</li>
+        <li><strong>Cancel any time</strong> — your access runs to the end of the period you've paid for, and you won't be charged again.</li>
+      </ul>
+      <p>No lock-in contracts, ever. Questions about a charge? Email <a href="mailto:hello@knockoff.co.nz">hello@knockoff.co.nz</a> and we'll sort it.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="cta-band">
+  <h2>Ready to <span>knock off</span> early?</h2>
+  <p>Set up your crew and run your first week free.</p>
+  <a href="https://app.knockoff.co.nz/owner.html" class="btn-primary">Open your dashboard →</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Knockoff</div>
+      <p>The timesheet app built for New Zealand tradies. By Corpworks Limited.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/about.html">About</a>
+      <a href="/guide.html">Guide</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <a href="mailto:hello@knockoff.co.nz">hello@knockoff.co.nz</a>
+      <a href="https://app.knockoff.co.nz/owner.html">Owner login</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>NZ-built · © 2026 Knockoff · A Corpworks Limited product</div>
+    <div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+  </div>
+</footer>
+</body>
+</html>

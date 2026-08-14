@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Knockoff</title>
+<meta name="description" content="The terms that govern your use of Knockoff, the timesheet app by Corpworks Limited — subscriptions, GST, billing, cancellation and your responsibilities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0d0d0d;
+    --white: #f5f0e8;
+    --yellow: #FFD000;
+    --orange: #FF5C00;
+    --mid: #1a1a1a;
+    --muted: #888;
+    --border: #2a2a2a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Instrument Sans', sans-serif; overflow-x: hidden; line-height: 1.65; }
+  a { color: inherit; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2.5rem; background: rgba(13,13,13,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--yellow); line-height: 1; text-decoration: none; }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--white); text-decoration: none; opacity: 0.8; transition: opacity 0.2s, color 0.2s; }
+  .nav-links a:hover { opacity: 1; color: var(--yellow); }
+  .nav-cta { background: var(--yellow); color: var(--black); border: none; border-radius: 6px; font-family: 'Instrument Sans', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.55rem 1.25rem; cursor: pointer; text-decoration: none; transition: background 0.2s; letter-spacing: 0.5px; white-space: nowrap; }
+  .nav-cta:hover { background: #ffe033; }
+
+  .doc-hero { padding: 9rem 2rem 2.5rem; max-width: 820px; margin: 0 auto; }
+  .doc-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--orange); margin-bottom: 1rem; }
+  .doc-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 8vw, 5rem); letter-spacing: 2px; line-height: 0.95; }
+  .doc-meta { color: var(--muted); font-size: 0.9rem; margin-top: 1rem; }
+
+  .doc { max-width: 820px; margin: 0 auto; padding: 1rem 2rem 2rem; }
+  .doc .intro { color: #cfcabf; font-size: 1.05rem; margin-bottom: 1.25rem; }
+  .doc h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: 1px; margin: 2.75rem 0 0.9rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; gap: 0.75rem; align-items: baseline; }
+  .doc h2 .n { color: var(--yellow); font-size: 1.4rem; min-width: 2rem; }
+  .doc h3 { font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--white); }
+  .doc p { color: #cfcabf; margin-bottom: 1rem; }
+  .doc p strong { color: var(--white); }
+  .doc ul { margin: 0.4rem 0 1rem 1.4rem; color: #cfcabf; }
+  .doc li { margin-bottom: 0.55rem; }
+  .doc a.link { color: var(--yellow); text-decoration: underline; }
+  .doc .callout { background: var(--mid); border: 1px solid var(--border); border-left: 3px solid var(--yellow); border-radius: 8px; padding: 1.1rem 1.35rem; margin: 1.5rem 0; font-size: 0.95rem; color: #e6e0d4; }
+
+  footer { border-top: 1px solid var(--border); padding: 3rem 2.5rem 2rem; margin-top: 4rem; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; }
+  .footer-brand { max-width: 260px; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 2px; color: var(--yellow); }
+  .footer-brand p { font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; }
+  .footer-col h4 { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 0.85rem; }
+  .footer-col a { display: block; font-size: 0.9rem; color: #bbb; text-decoration: none; margin-bottom: 0.55rem; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--yellow); }
+  .footer-bottom { max-width: 1100px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; }
+  .footer-bottom a { color: var(--muted); text-decoration: underline; }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .doc, .doc-hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+    footer { padding: 2.5rem 1.25rem 2rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Knock<span>off</span></a>
+  <div class="nav-links">
+    <a href="/about.html">About</a>
+    <a href="/guide.html">Guide</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/#pricing">Pricing</a>
+  </div>
+  <a href="https://app.knockoff.co.nz/owner.html" class="nav-cta">Start your free trial</a>
+</nav>
+
+<header class="doc-hero">
+  <div class="doc-tag">Legal</div>
+  <h1 class="doc-title">Terms of Service</h1>
+  <div class="doc-meta">Last updated: 13 August 2026 · Effective: 13 August 2026</div>
+</header>
+
+<main class="doc">
+  <p class="intro">These Terms of Service ("Terms") govern your use of Knockoff, a timesheet and payroll-preparation service provided by <strong>Corpworks Limited</strong> ("Knockoff", "we", "us", "our"). By signing up for or using Knockoff, you agree to these Terms. If you don't agree, please don't use the service.</p>
+
+  <h2><span class="n">1</span> Definitions</h2>
+  <ul>
+    <li><strong>"Service"</strong> means the Knockoff app, website and related features.</li>
+    <li><strong>"Account owner"</strong> or <strong>"you"</strong> means the business or person who signs up for and administers a Knockoff account.</li>
+    <li><strong>"Crew"</strong> means staff added to your account who record timesheets.</li>
+    <li><strong>"Plan"</strong> means the paid subscription tier you select.</li>
+  </ul>
+
+  <h2><span class="n">2</span> The service</h2>
+  <p>Knockoff lets you record your crew's hours, automatically calculate paid time and breaks, approve entries, and export payroll-ready data (including a Smartly-ready CSV). It's a tool to help you prepare payroll — <strong>it does not calculate tax, pay wages, or provide payroll, accounting, employment or legal advice</strong>. You remain responsible for your own payroll, tax and employment obligations.</p>
+
+  <h2><span class="n">3</span> Accounts and eligibility</h2>
+  <p>To use Knockoff you must be a business (or acting on behalf of one) in New Zealand, and be at least 18 years old. You're responsible for keeping your sign-in access and your crew's PINs secure, and for all activity under your account. Let us know promptly if you think there's been unauthorised access.</p>
+
+  <h2><span class="n">4</span> Free trial</h2>
+  <p>New accounts start with a <strong>7-day free trial</strong>, with no credit card required to begin. At the end of the trial, you'll need to choose a paid plan and provide payment details to keep using the Service. We may change or withdraw trial offers at any time.</p>
+
+  <h2><span class="n">5</span> Plans, pricing and GST</h2>
+  <p>Our current plans are:</p>
+  <ul>
+    <li><strong>Starter — $35/month</strong> — up to 5 crew</li>
+    <li><strong>Pro — $55/month</strong> — up to 10 crew</li>
+    <li><strong>Business — $95/month</strong> — up to 20 crew</li>
+  </ul>
+  <p>All prices are in New Zealand dollars and are <strong>exclusive of GST</strong>. New Zealand GST (currently 15%) is added at checkout. For example, the Starter plan is $35 + $5.25 GST = $40.25 per month. We may change our pricing from time to time; if we change the price of your plan, we'll give you reasonable notice and any change will apply from your next billing period.</p>
+
+  <h2><span class="n">6</span> Billing and payment</h2>
+  <p>Paid plans are billed <strong>monthly in advance</strong> through our payment processor, <strong>Stripe</strong>. By subscribing, you authorise us (via Stripe) to charge your payment method on a recurring basis until you cancel. You're responsible for keeping your payment details current. If a payment fails, we may retry it and may suspend the Service until payment is made. Tax invoices and receipts are available through the billing portal.</p>
+
+  <h2><span class="n">7</span> Cancellation and refunds</h2>
+  <p>You can <strong>cancel any time</strong> from the billing portal in your dashboard. When you cancel, your subscription remains active until the end of the current paid billing period, and you won't be charged again after that. There are no lock-in contracts and no cancellation fees.</p>
+  <p>Because plans are billed monthly, we generally <strong>don't provide partial refunds</strong> for the remainder of a billing period. If you've been charged in error, or something has genuinely gone wrong, contact us at <a class="link" href="mailto:hello@knockoff.co.nz">hello@knockoff.co.nz</a> and we'll work it out. Nothing in this section limits your rights under the Consumer Guarantees Act 1993 (see section 12).</p>
+
+  <h2><span class="n">8</span> Your responsibilities and acceptable use</h2>
+  <p>You agree to use Knockoff lawfully and not to:</p>
+  <ul>
+    <li>Use it to break any law, including employment, tax or privacy law;</li>
+    <li>Enter information you don't have the right to provide;</li>
+    <li>Attempt to disrupt, reverse-engineer, or gain unauthorised access to the Service;</li>
+    <li>Resell or provide the Service to others outside your own business without our agreement.</li>
+  </ul>
+
+  <h2><span class="n">9</span> Your crew's information</h2>
+  <p>When you add crew and their details, you confirm you're authorised to provide that information and to have it processed in Knockoff, and that you'll make your crew aware of how their information is used. Our handling of personal information is set out in our <a class="link" href="/privacy.html">Privacy Policy</a>. As between you and us, the business data and crew data in your account is <strong>yours</strong>.</p>
+
+  <h2><span class="n">10</span> Availability</h2>
+  <p>We work hard to keep Knockoff available and reliable, but we don't guarantee it will be uninterrupted or error-free. We may carry out maintenance, updates or changes, and may occasionally need to suspend parts of the Service. We'll aim to minimise disruption where we can.</p>
+
+  <h2><span class="n">11</span> Intellectual property</h2>
+  <p>Knockoff, including its software, design and branding, is owned by Corpworks Limited. These Terms don't transfer any of our intellectual property to you. You keep ownership of the data you and your crew put into the Service.</p>
+
+  <h2><span class="n">12</span> Consumer rights and liability</h2>
+  <p>If you use Knockoff for the purposes of a business, you agree that, to the maximum extent permitted by law, the <strong>Consumer Guarantees Act 1993</strong> and the guarantees in sections 9, 12A and 13 of the <strong>Fair Trading Act 1986</strong> do not apply. Nothing in these Terms limits rights that cannot legally be excluded.</p>
+  <p>To the extent permitted by law, we are not liable for indirect or consequential loss, or for loss of profits, data or business, arising from your use of (or inability to use) the Service. Where we are liable, our total liability to you is limited to the amount you paid us for the Service in the <strong>three months</strong> before the event giving rise to the claim.</p>
+  <div class="callout">
+    Knockoff helps you prepare payroll — it doesn't replace your own checks. You are responsible for reviewing hours before you approve and export them, and for meeting your payroll, tax and employment obligations.
+  </div>
+
+  <h2><span class="n">13</span> Suspension and termination</h2>
+  <p>We may suspend or terminate your access if you breach these Terms, if payment isn't made, or if we're required to by law. You can stop using the Service and cancel at any time. On termination, your right to use the Service ends; we may delete your data after a reasonable period in line with our Privacy Policy, so export anything you need first.</p>
+
+  <h2><span class="n">14</span> Changes to these Terms</h2>
+  <p>We may update these Terms from time to time. When we make material changes, we'll update the "last updated" date above and, where appropriate, notify account owners. Continuing to use Knockoff after a change means you accept the updated Terms.</p>
+
+  <h2><span class="n">15</span> Governing law</h2>
+  <p>These Terms are governed by the laws of <strong>New Zealand</strong>, and the New Zealand courts have jurisdiction over any dispute. Small disputes may also be dealt with through the Disputes Tribunal where eligible.</p>
+
+  <h2><span class="n">16</span> Contact</h2>
+  <p>Questions about these Terms? Email us at <a class="link" href="mailto:hello@knockoff.co.nz">hello@knockoff.co.nz</a>.</p>
+
+  <div class="callout" style="border-left-color: var(--orange);">
+    Knockoff is operated by Corpworks Limited, New Zealand. GST number 121905558. Contact: hello@knockoff.co.nz.
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Knockoff</div>
+      <p>The timesheet app built for New Zealand tradies. By Corpworks Limited.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="/about.html">About</a>
+      <a href="/guide.html">Guide</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <a href="mailto:hello@knockoff.co.nz">hello@knockoff.co.nz</a>
+      <a href="https://app.knockoff.co.nz/owner.html">Owner login</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>NZ-built · © 2026 Knockoff · A Corpworks Limited product</div>
+    <div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+  </div>
+</footer>
+</body>
+</html>
