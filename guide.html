@@ -29,6 +29,9 @@
   .nav-links a:hover { opacity: 1; color: var(--yellow); }
   .nav-cta { background: var(--yellow); color: var(--black); border: none; border-radius: 6px; font-family: 'Instrument Sans', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 0.55rem 1.25rem; cursor: pointer; text-decoration: none; transition: background 0.2s; letter-spacing: 0.5px; white-space: nowrap; }
   .nav-cta:hover { background: #ffe033; }
+    .nav-actions { display: flex; align-items: center; gap: 1.25rem; }
+    .nav-login { font-size: 0.9rem; font-weight: 500; color: var(--white); text-decoration: none; opacity: 0.85; white-space: nowrap; transition: opacity 0.2s, color 0.2s; }
+    .nav-login:hover { opacity: 1; color: var(--yellow); }
 
   .page-hero { padding: 10rem 2rem 3rem; text-align: center; position: relative; overflow: hidden; }
   .page-hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,208,0,0.12) 0%, transparent 60%); }
@@ -81,7 +84,7 @@
 
   @media (max-width: 700px) {
     nav { padding: 1rem 1.25rem; }
-    .nav-links { display: none; }
+    .nav-links { display: none; } .nav-actions { gap: 0.9rem; }
     .container { padding: 1.5rem 1.25rem; }
     .step { gap: 1rem; }
     .step-num { font-size: 2.5rem; min-width: 2.5rem; }
@@ -98,7 +101,7 @@
     <a href="/faq.html">FAQ</a>
     <a href="/#pricing">Pricing</a>
   </div>
-  <a href="https://app.knockoff.co.nz/owner.html" class="nav-cta">Start your free trial</a>
+  <div class="nav-actions"><a href="https://app.knockoff.co.nz/owner.html" class="nav-login">Log in</a><a href="https://app.knockoff.co.nz/owner.html" class="nav-cta">Start your free trial</a></div>
 </nav>
 
 <section class="page-hero">
