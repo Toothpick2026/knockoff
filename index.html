@@ -86,6 +86,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .price-features li { font-size: 0.88rem; color: #aaa; padding: 0.4rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 0.5rem; align-items: center; }
 .price-features li:last-child { border: none; }
 .price-features li::before { content: '✓'; color: var(--yellow); font-weight: 700; flex-shrink: 0; }
+    .price-features li.no { color: #6b6b6b; }
+    .price-features li.no::before { content: '✕'; color: #6b6b6b; }
 .price-note { font-size: 0.75rem; color: var(--muted); margin-top: 1rem; }
 .cta-section { padding: 7rem 2rem; text-align: center; position: relative; overflow: hidden; }
 .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255,208,0,0.08) 0%, transparent 70%); }
@@ -192,8 +194,8 @@ Timesheets
 <div class="pricing-inner">
 <div class="reveal"><div class="section-label">Pricing</div><h2 class="section-heading">Fair price.<br>No surprises.</h2><p style="color:#888; margin-top:1rem;">Simple NZD pricing, plus GST. No hidden fees.</p></div>
 <div class="pricing-cards">
-<div class="price-card reveal"><div class="price-tier">Starter</div><div class="price-amount">$35</div><div class="price-period">per month · NZD</div><ul class="price-features"><li>Up to 5 staff</li><li>Unlimited timesheet entries</li><li>Admin payroll board</li><li>Smartly CSV export</li><li>Break reminders</li><li style="opacity:.6;">No GPS job site check-in</li></ul></div>
-<div class="price-card featured reveal"><div class="price-badge">Most Popular</div><div class="price-tier">Pro</div><div class="price-amount">$55</div><div class="price-period">per month · NZD</div><ul class="price-features"><li>Up to 10 staff</li><li>All Starter features</li><li><strong>GPS job site check-in</strong> — every clock-in records where it happened</li><li>Multiple job lists</li><li>Email support</li></ul><div class="price-note"><a href="https://app.knockoff.co.nz/owner.html" style="color:#FFD000;font-weight:700;text-decoration:none;">Start your free trial today — 7 days free →</a></div></div>
+<div class="price-card reveal"><div class="price-tier">Starter</div><div class="price-amount">$35</div><div class="price-period">per month · NZD</div><ul class="price-features"><li>Up to 5 staff</li><li>Unlimited timesheet entries</li><li>Admin payroll board</li><li>Smartly CSV export</li><li>Break reminders</li><li class="no">No GPS job site check-in</li></ul></div>
+<div class="price-card featured reveal"><div class="price-badge">Most Popular</div><div class="price-tier">Pro</div><div class="price-amount">$55</div><div class="price-period">per month · NZD</div><ul class="price-features"><li>Up to 10 staff</li><li>All Starter features</li><li><span><strong>GPS job site check-in</strong> — every clock-in records where it happened</span></li><li>Multiple job lists</li><li>Email support</li></ul><div class="price-note"><a href="https://app.knockoff.co.nz/owner.html" style="color:#FFD000;font-weight:700;text-decoration:none;">Start your free trial today — 7 days free →</a></div></div>
 <div class="price-card reveal"><div class="price-tier">Business</div><div class="price-amount" style="font-size:2rem;">Let’s talk</div><div class="price-period">trade pricing · NZD</div><ul class="price-features"><li>Everything in Pro</li><li>Bigger crews · multiple teams</li><li>Custom job categories</li><li>Payroll notes &amp; reports</li></ul><div class="price-note"><a href="mailto:hello@knockoff.co.nz?subject=Knockoff%20Business%20plan%20enquiry" style="color:#FFD000;font-weight:700;text-decoration:none;">Talk to us about a trade deal →</a></div></div>
 </div>
 </div>
