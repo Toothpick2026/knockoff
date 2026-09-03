@@ -82,18 +82,47 @@
     .container { padding: 1.5rem 1.25rem; }
     footer { padding: 2.5rem 1.25rem 2rem; }
   }
+
+  /* Mobile menu */
+  .nav-toggle { display: none; background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.55rem; cursor: pointer; }
+  .nav-toggle:hover { border-color: #3d3d3d; }
+  .nav-toggle:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+  .nav-toggle span { display: block; width: 20px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
+  .nav-toggle span + span { margin-top: 5px; }
+  nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+  nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 700px) {
+    nav { flex-wrap: wrap; }
+    .nav-logo { order: 1; }
+    .nav-actions { order: 2; margin-left: auto; }
+    .nav-toggle { order: 3; display: flex; flex-direction: column; margin-left: 0.85rem; }
+    nav .nav-links { display: none; order: 4; width: 100%; flex-direction: column; align-items: stretch; gap: 0; margin-top: 0.9rem; padding-top: 0.35rem; border-top: 1px solid var(--border); }
+    nav.open .nav-links { display: flex; }
+    nav .nav-links a { font-size: 1.02rem; opacity: 1; padding: 0.85rem 0.15rem; border-bottom: 1px solid rgba(245,240,232,0.06); }
+    nav .nav-links a:last-child { border-bottom: none; }
+  }
+  @media (max-width: 430px) {
+    .nav-login { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-toggle span { transition: none; }
+  }
 </style>
 </head>
 <body>
 <nav>
   <a href="/" class="nav-logo">Knock<span>off</span></a>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="/about.html">About</a>
     <a href="/guide.html">Guide</a>
+    <a href="/install.html">Install</a>
     <a href="/faq.html">FAQ</a>
     <a href="/#pricing">Pricing</a>
   </div>
   <div class="nav-actions"><a href="https://app.knockoff.co.nz/owner.html" class="nav-login">Log in</a><a href="https://app.knockoff.co.nz/owner.html" class="nav-cta">Start your free trial</a></div>
+<button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 
 <section class="page-hero">
@@ -151,6 +180,7 @@
       <h4>Product</h4>
       <a href="/about.html">About</a>
       <a href="/guide.html">Guide</a>
+      <a href="/install.html">Install</a>
       <a href="/faq.html">FAQ</a>
       <a href="/#pricing">Pricing</a>
     </div>
@@ -170,5 +200,42 @@
     <div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
   </div>
 </footer>
+<script>
+(function () {
+  var nav = document.querySelector('nav');
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (!nav || !toggle || !links) return;
+
+  function setOpen(open) {
+    nav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!nav.classList.contains('open'));
+  });
+
+  Array.prototype.forEach.call(links.querySelectorAll('a'), function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (nav.classList.contains('open') && !nav.contains(e.target)) setOpen(false);
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 700) setOpen(false);
+  });
+})();
+</script>
 </body>
 </html>
